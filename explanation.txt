@@ -1,0 +1,9 @@
+1. I used blastp because we are comparing protein sequences of a mouse vs. a human, which is what blastp is meant for
+
+2. BLOSUM62 is the default substitution matrix for blastp, so I used that. I looked into it more and found out that it
+is good for moderately different proteins, which would be expected between two mammals.
+
+3. The evalue of .00001 is good because it is strict enough to not detect random matchings while being high enough to 
+capture all of the significant matches. The number of alignments is 1 in order to find the most homologous sequences, 
+which reduces the processing required and narrows down on the top homolog. The outfmt 5 specifies the XML format, which 
+makes the blast easier to parse for ID's and alignments. 
